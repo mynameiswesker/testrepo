@@ -1,0 +1,6 @@
+{
+    "port":"5000",
+    "mongoUri": "mongodb+srv://alexandr:355269189@cluster0.xftj2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "baseUri": "http://localhost:5000"
+}
+

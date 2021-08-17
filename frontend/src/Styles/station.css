@@ -1,0 +1,29 @@
+.name_station{
+    text-align: center;
+    color: rgb(196 22 22);
+}
+
+.objects{
+    display: flex;
+    height: 100px;
+    min-width: 250px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    border: 3px solid rgb(255, 0, 0);
+    flex-direction: row;
+    align-items: center;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.objects:hover{
+    transition: 0.33s;
+    background-color: rgb(153, 153, 153);
+    border-color: #fff;
+    cursor: pointer;
+    color:#fff;
+}
+
+body{
+    background-color: rgb(219, 219, 219);
+}

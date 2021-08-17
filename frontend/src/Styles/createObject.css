@@ -1,0 +1,259 @@
+h1,h3,h4{
+    text-align: center;
+}
+
+.result_prov{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+textarea{
+    margin: 5px;
+}
+
+.create_object{
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo_ingines{
+    display: flex;
+    justify-content: space-around;
+}
+
+.p_btn_send{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapp_div_teh_osv{
+    border: 1px dashed #7a7a7a77;
+    margin: 5px;
+    padding: 10px;
+    background-color: #f5faff;
+    z-index: 1;
+}
+
+.div_teh_osv{
+    padding: 3px;
+    position: relative;
+    border: 1px solid #000000;
+    margin: 10px;
+    background-color: rgba(75, 75, 75, 0.404);
+    z-index: 2;
+}
+
+.div_teh_osv_targetDate{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.wrap_div_label_tehosv{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 30px;
+    min-width: 240px;
+}
+
+.wrap_div_label_tehosv>label{
+    margin-right: 5px;
+}
+
+/**/
+.message_created{
+    background-color: rgb(175, 175, 175);
+    color:rgb(65, 65, 65);
+    position: fixed;
+    width: 350px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.message_created>p{
+    display: flex;
+    justify-content: center;
+}
+
+/*prilo*/
+.prilo{
+    margin: 3px 3px 20px 3px;
+    position: relative;
+    padding: 3px;
+    border: 1px solid #000000;
+    margin: 10px;
+    background-color: rgba(75, 75, 75, 0.404);
+    z-index: 1;
+}
+
+.prilo>p{
+    display: flex;
+    flex-direction: column;
+}
+/*кнопка удалить раздел приложения*/
+.remove_prilo{
+    right: 5px;
+    top:5px;
+    position: absolute;
+    color:rgb(0, 0, 0);
+}
+
+.remove_prilo:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 166%; top: -175%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: rgba(255, 17, 0, 0.9); /* Полупрозрачный цвет фона */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 11px; /* Размер текста подсказки */
+    padding: 5px 10px; /* Поля */
+    border: 1px solid #333; /* Параметры рамки */
+    color:rgb(255, 255, 255)
+}
+
+/*выход из создания объекта*/
+.exit_create{
+    position: fixed;
+    right:10px;
+    top:10px;
+    text-decoration: none;
+}
+
+/*обертка дива с кнопкой добавить*/
+.wrapp_div_button_add{
+    margin:20px 0px 0px 5px;
+}
+
+/*кнопка добавить*/
+.button_add{
+    height: 30px;
+    width: 32px;
+    position: relative;
+    background-color: rgba(6, 182, 0, 0.9);
+    text-align: center;
+    border: 2px solid rgb(49, 122, 0);
+    box-sizing: border-box;
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 15px 6px 0px rgba(34, 60, 80, 0.19);
+    -moz-box-shadow: 10px 15px 6px 0px rgba(34, 60, 80, 0.19);
+    box-shadow: 4px 4px 3px 0px rgba(34, 60, 80, 0.19);
+}
+
+.button_add::after{
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    width: 3px;
+    height: 21px;
+    top: 2px;
+    left: 13px;
+    border-radius: 2px;
+}
+
+.button_add::before{
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    width: 22px;
+    height: 3px;
+    top:11px;
+    left: 3px;
+    border-radius: 2px;
+}
+
+.button_add:hover{
+    cursor: pointer;
+    position: relative;
+    transition: 0.22s;
+    background-color: rgb(7, 199, 0);
+
+}
+
+.wrapp_button_add{
+    position: relative;
+    height: 30px;
+    width: 35px;
+    z-index: 10;
+}
+
+.wrapp_teh_pasport{
+    padding-bottom: 10px;
+}
+
+/*кнопка закрыть*/
+.close {
+    height: 30px;
+    width: 32px;
+    position: relative;
+    margin: 5px;
+    background-color: rgba(218, 34, 2, 0.9);
+    text-align: center;
+    border: 2px solid rgba(160, 24, 0, 0.9);
+    box-sizing: border-box;
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 15px 6px 0px rgba(34, 60, 80, 0.19);
+    -moz-box-shadow: 10px 15px 6px 0px rgba(34, 60, 80, 0.19);
+    box-shadow: 4px 4px 3px 0px rgba(34, 60, 80, 0.19);
+}
+
+.close::after{
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    width: 3px;
+    height: 27px;
+    top: -1px;
+    left: 13px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.close::before{
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    width: 3px;
+    height: 27px;
+    top: -1px;
+    left: 13px;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+}
+
+.close:hover{
+    cursor: pointer;
+    transition: 0.22s;
+    background-color: rgb(218, 2, 2);
+}
+
+.wrapp_button_close{
+    position: relative;
+    height: 30px;
+    width: 35px;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+
+
+

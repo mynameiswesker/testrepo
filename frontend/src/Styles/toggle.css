@@ -1,0 +1,99 @@
+li{
+    list-style-type: none;
+}
+
+h3,h1{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.right_content>div{
+    margin-left: 10px;
+}
+
+h2{
+    text-align: center;
+}
+
+.ul_teh_osv>li{
+    text-align: center;
+}
+
+/*Основная инф*/
+
+.div_osnova{
+    display: flex;
+    flex-direction: column;
+    color:#26373b;/*цвет букв*/
+}
+
+.div_osnova>div{
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.div_osnova h4{
+    text-align: start;
+}
+
+.div_osnova>ul{
+    border: 1px dashed #ffffff;
+    border-right: none;
+    border-left: none;
+    margin-right: 10px;
+    background-color: rgb(217 217 217);
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.div_osnova>ul>li{
+    margin-left: 10px;
+}
+
+/*Конец основн инф*/
+
+.ul_teh_osv>li>h4{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.ul_teh_osv>li>h4 p{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/*Таблица приложений*/
+
+.tablePrilo{
+    width:100%;
+    padding-right: 10px;
+}
+
+.tablePrilo>table{
+    width:100%;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color:#26373b;/*цвет букв в таблице*/
+    border-collapse: collapse;
+}
+
+.tablePrilo>table>tbody>tr>td{
+    text-align:center;
+}
+
+.tablePrilo>table>tbody>tr{
+    height: 30px;
+}
+
+td,tr{
+    border:1px solid rgb(255, 255, 255);
+}
+
+/*конец таблицы приложений*/
+
+
+
