@@ -1,0 +1,32 @@
+tr,td{
+    border: 1px solid #fff;
+}
+
+td{
+    height: 30px;
+    padding:3px;
+}
+
+.table2{
+    border-collapse: collapse;
+    text-align: center;
+    font-size:0.7rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.rotate_text_table{
+    transform: rotate(-90deg);
+    height: 130px;
+}
+
+.firstElem{
+    min-width:103px;
+}
+
+.wrapp_table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

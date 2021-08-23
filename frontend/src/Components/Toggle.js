@@ -1,5 +1,26 @@
 import '../Styles/toggle.css'
 import '../Styles/elPrivodTehSys.css'
+
+const Empty_td13 = ()=>{
+    return(
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    )
+}
+
 export function Toggle({category,obj}) {
 
 /*     const [urls,change_urls] = useReducer((state,url)=>{//урлы картинок
@@ -66,6 +87,7 @@ export function Toggle({category,obj}) {
     } */
 
     console.log(obj,category)
+    
 //основная информация//////////////////////////////////////////////////////////////////
     if(category === 'osnova'){
         return(
@@ -168,9 +190,71 @@ export function Toggle({category,obj}) {
         return(
             <div className="wrapp_table">
                 <h1>Электропривод технологической системы</h1>
-                <table className="table1">
+                <table className="table2">
                     <tbody>
-                        
+                        <tr>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table firstElem'>Наименование оборудования (назначение), тип соединения с ЭД</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Тип агрегата (насос,вентилятор)</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Тип электродвигателя</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Заводской номер</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Паспорт на изделие (№)</td>
+                            <td colSpan={5}>Основные характеристики оборудования</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Год выпуска</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Год ввода в эксплуатацию</td>
+                            <td colSpan={1} rowSpan={2} className='rotate_text_table'>Завод изготовитель</td>
+                        </tr>
+
+                        <tr>{/* Ячейка для вложенной таблички */}
+                            <td className='rotate_text_table'>Мощность</td>
+                            <td className='rotate_text_table'>Частота вращения (об/мин)</td>
+                            <td className='rotate_text_table'>Номинальный ток (А)</td>
+                            <td className='rotate_text_table elemHeight'>Производительность, подача (м<sup>3</sup>/час)</td>
+                            <td className='rotate_text_table'>Вес</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                        </tr>
+
+                        {obj.privod.map((item,i)=>{
+                            return(
+                                <tr key={i}>
+                                    <td>{item.name_oborud}</td>
+                                    <td>{item.type_ogregata}</td>
+                                    <td>{item.type_engine}</td>
+                                    <td>{item.zavod_number}</td>
+                                    <td>{item.pasport_na_izdelie}</td>
+                                    <td>{item.power}</td>
+                                    <td>{item.chastota_vra}</td>
+                                    <td>{item.nominal_tok}</td>
+                                    <td>{item.proizvodit}</td>
+                                    <td>{item.ves}</td>
+                                    <td>{new Date(item.year_vipusk).getFullYear()}</td>
+                                    <td>{new Date(item.year_vvoda).getFullYear()}</td>
+                                    <td>{item.zavod_izgotov}</td>
+                                </tr>
+                            )
+                        })}
+
+                        {/* пустые ячейки */}
+                        {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                                return(
+                                    <Empty_td13  key={i}/>
+                                )
+                            })}
+
                     </tbody>
                 </table>
             </div>
