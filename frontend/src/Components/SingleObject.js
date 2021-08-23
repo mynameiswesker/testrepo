@@ -55,7 +55,7 @@ export function SingleObject() {
                             <li onClick={()=>{change_category('osnova')}}>Основная информация</li>
                             <li onClick={()=>{change_category('tablePrilo')}}>Таблица приложений</li>
                             <li onClick={()=>{change_category('elPrivodTehSistem')}}>Электропривод технологической системы</li>
-                            <li>Основное электрооборудование</li>
+                            <li onClick={()=>{change_category('osnovnoe_el_oborudovanie')}}>Основное электрооборудование</li>
                             <li>Вспомогательное электрооборудование</li>
                             <li>Кабельные линии</li>
                             <li>Сведения о проведенных ремонтах</li>

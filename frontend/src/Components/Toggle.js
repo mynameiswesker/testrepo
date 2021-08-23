@@ -262,6 +262,18 @@ export function Toggle({category,obj}) {
     }
 ////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////Основное электрооборудование 
+    if(category === 'osnovnoe_el_oborudovanie'){
+        return(
+
+        <div className='osnovnoe_el_oborud'>
+            <h1>Основное электрооборудование</h1>
+        </div>
+        
+        )
+    }
+//////////////////////////////////////////////
+
     return(
         <div className='div_osnova'>
 
