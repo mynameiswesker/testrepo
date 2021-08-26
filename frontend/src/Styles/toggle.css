@@ -75,7 +75,6 @@ h2{
 .tablePrilo>table{
     width:100%;
     margin-bottom: 50px;
-    font-weight: bold;
     font-size: 0.8rem;
     color:#26373b;/*цвет букв в таблице*/
     border-collapse: collapse;

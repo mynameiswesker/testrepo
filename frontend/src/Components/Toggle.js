@@ -1,8 +1,10 @@
 import '../Styles/toggle.css'
 import '../Styles/elPrivodTehSys.css'
 import '../Styles/tableOsnovElObor.css'
+import '../Styles/tableVspomogatelnoe.css'
+import '../Styles/tableKabel.css'
 
-const Empty_td13 = ()=>{
+const Empty13 = ()=>{
     return(
         <tr>
             <td></td>
@@ -25,6 +27,31 @@ const Empty_td13 = ()=>{
 const Empty4 = ()=>{
     return(
         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    )
+}
+
+const Empty5 = ()=>{
+    return(
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    )
+}
+
+const Empty6 = ()=>{
+    return(
+        <tr>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -263,7 +290,7 @@ export function Toggle({category,obj}) {
                         {/* пустые ячейки */}
                         {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
                                 return(
-                                    <Empty_td13  key={i}/>
+                                    <Empty13  key={i}/>
                                 )
                             })}
 
@@ -273,8 +300,6 @@ export function Toggle({category,obj}) {
         )
     }
 ////////////////////////////////////////////////////////////////////////////////////////
-
-console.log('qwewqeqwe:',obj.osnovnoe_el_oborud)
 
 //////////////////Основное электрооборудование 
     if(category === 'osnovnoe_el_oborudovanie'){
@@ -311,11 +336,11 @@ console.log('qwewqeqwe:',obj.osnovnoe_el_oborud)
                             )
                         })}
 
-                        {/* {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                        {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
                             return(
                                 <Empty4 key={i}/>
                             )
-                        })} */}
+                        })}
 
                     </tbody>
                 </table>
@@ -325,6 +350,171 @@ console.log('qwewqeqwe:',obj.osnovnoe_el_oborud)
         )
     }
 //////////////////////////////////////////////
+
+/////////////////Вспомогательное оборудование/////////////////////
+
+if(category === 'vspomogatelnoe'){
+    return(
+
+    <div className='osnovnoe_el_oborud'>
+        <h1>Назначение и состав основного электрооборудования</h1>
+        <div className='table4'>
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td>Назначение и состав основного электрооборудования</td>
+                        <td>Тип, завод изготовитель</td>
+                        <td>Технический паспорт (№)</td>
+                        <td>Год ввода в эксплуатацию</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+
+                    {obj.vspomogatelnoe.map((item,i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{item.naznachenie}</td>
+                                <td>{item.type}</td>
+                                <td>{item.teh_pasport}</td>
+                                <td>{new Date(item.year_vipusk).getFullYear()}</td>
+                            </tr>
+                        )
+                    })}
+
+                    {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                        return(
+                            <Empty4 key={i}/>
+                        )
+                    })}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    )
+}
+
+//////////////////////////////////////////////////////////////////
+
+/////////////////Кабельные линии//////////////////////////////////
+
+if(category === 'kabelnie_linii'){
+    return(
+
+    <div className='osnovnoe_el_oborud'>{/* Не поменял класс */}
+        <h1>Кабельные линии</h1>
+        <div className='table5'>
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td>Назначение, номер, наименование кабеля (силовых, управления, сигнализация)</td>
+                        <td>Дата монтажа</td>
+                        <td>Марка кабеля (число жил, сечение)</td>
+                        <td>Напряжение (U)</td>
+                        <td>Длина (м)</td>
+                        <td>Дата проверки</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+
+                    {obj.kabel.map((item,i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{item.naznachenie}</td>
+                                <td>{new Date(item.date_montazh).getFullYear()}</td>
+                                <td>{item.marka}</td>
+                                <td>{item.napr}</td>
+                                <td>{item.dlina}</td>
+                                <td>{new Date(item.date_proverki).getFullYear()}</td>
+                            </tr>
+                        )
+                    })}
+
+                    {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                        return(
+                            <Empty6 key={i}/>
+                        )
+                    })}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    )
+}
+
+//////////////////////////////////////////////////////////////////
+
+/////////////////Сведения о проведенных ремонтах//////////////////////////////////
+
+if(category === 'svedeniya_o_rem'){
+    return(
+
+    <div className='osnovnoe_el_oborud'>{/* Не поменял класс */}
+        <h1>Сведения о проведенных текущих, капитальных ремонтах, реконструкции и модернизации</h1>
+        <div className='table5'>
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td>Дата поступления в ремонт</td>
+                        <td>Вид ремонта</td>
+                        <td>Производитель ремонта</td>
+                        <td>Дата окончания ремонта</td>
+                        <td>Подпись ответственного за ремонт</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+
+                    {obj.svedeniya.map((item,i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{new Date(item.date_start).getFullYear()}</td>
+                                <td>{item.type}</td>
+                                <td>{item.person}</td>
+                                <td>{new Date(item.date_end).getFullYear()}</td>
+                                <td>{item.otvetstv}</td>
+                            </tr>
+                        )
+                    })}
+
+                    {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                        return(
+                            <Empty5 key={i}/>
+                        )
+                    })}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    )
+}
+
+//////////////////////////////////////////////////////////////////
 
     return(
         <div className='div_osnova'>
