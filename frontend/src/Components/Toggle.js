@@ -1,5 +1,6 @@
 import '../Styles/toggle.css'
 import '../Styles/elPrivodTehSys.css'
+import '../Styles/tableOsnovElObor.css'
 
 const Empty_td13 = ()=>{
     return(
@@ -13,6 +14,17 @@ const Empty_td13 = ()=>{
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    )
+}
+
+const Empty4 = ()=>{
+    return(
+        <tr>
             <td></td>
             <td></td>
             <td></td>
@@ -262,12 +274,52 @@ export function Toggle({category,obj}) {
     }
 ////////////////////////////////////////////////////////////////////////////////////////
 
+console.log('qwewqeqwe:',obj.osnovnoe_el_oborud)
+
 //////////////////Основное электрооборудование 
     if(category === 'osnovnoe_el_oborudovanie'){
         return(
 
         <div className='osnovnoe_el_oborud'>
             <h1>Основное электрооборудование</h1>
+            <div className='table3'>
+                <table>
+                    <tbody>
+
+                        <tr>
+                            <td>Назначение и состав основного электрооборудования</td>
+                            <td>Тип, завод изготовитель</td>
+                            <td>Технический паспорт (№)</td>
+                            <td>Год ввода в эксплуатацию</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+
+                        {obj.osnovnoe_el_oborud.map((item,i)=>{
+                            return(
+                                <tr key={i}>
+                                    <td>{item.naznachenie}</td>
+                                    <td>{item.type}</td>
+                                    <td>{item.teh_pasport}</td>
+                                    <td>{new Date(item.year_vipusk).getFullYear()}</td>
+                                </tr>
+                            )
+                        })}
+
+                        {/* {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                            return(
+                                <Empty4 key={i}/>
+                            )
+                        })} */}
+
+                    </tbody>
+                </table>
+            </div>
         </div>
         
         )
