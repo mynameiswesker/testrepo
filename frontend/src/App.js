@@ -11,6 +11,7 @@ import {CreateObject} from './Components/CreateObject'
 import {Dist} from './Components/Dist'
 import {Stations} from './Components/Stations'
 import {SingleObject} from './Components/SingleObject'
+import {Archive} from './Components/Archive'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route exact path='/auth' component={Auth} />
         <Route exact path='/admin' component={Admin} />
         <Route exact path='/admin/create' component={CreateObject} />
+        <Route exact path='/admin/archive' component={Archive} />
       </Switch>
     </Router>
   );

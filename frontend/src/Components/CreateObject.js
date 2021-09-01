@@ -30,10 +30,10 @@ export function CreateObject(){
     const [itog_osmotra_zaz,get_itog_osmotra_zaz] = useState([])//данные об итогах проверки заземл [{},{}...]
 
     const [isCreate,toCreate] = useState(false)//при нажатии на кнопку отправить вывести сообщение 'данные сохранены в бд'
+    const [loading,change_loading] = useState(false)//
 
     const send_to_server = async(e)=>{
         e.preventDefault()
-        const photos = document.getElementById('photos').files//массив изображений
 
         const formData = new FormData()
 
@@ -50,25 +50,38 @@ export function CreateObject(){
         formData.append('prov_zazeml',JSON.stringify(prov_zazeml))//положил массив из {} для аварийных ремонтах
         formData.append('itog_osmotra_zaz',JSON.stringify(itog_osmotra_zaz))//положил массив из {} для аварийных ремонтах
 
-        for (let i = 0; i < photos.length; i++) {
-            formData.append('photos', photos[i]);//положили каждую картинку в формдата в ячейку photos
-          }
-
         try {
+            change_loading(true)
             const response = await fetch('/api/create/array',{
                 method:'POST',
                 body:formData
             })
             const result = await response.json()
             console.log(result)
+            change_loading(false)
             toCreate(true)
         } catch (err) {
+            change_loading(false)
             console.log('Ошибка при получении данных :', err)
-        }  
+        }
+        
     }
 
     return(
+
     <>
+        {loading ? 
+            <div style={{
+                position:'fixed',
+                display:'flex',justifyContent:'center',
+                width:'100%',
+                height:'100vh',
+                alignItems:'center',
+                zIndex:'1000',fontSize:'2rem'
+            }}>
+                Загрузка...
+            </div> : ''}
+
         {isCreate ? 
             <div className='message_created'>
                 <h3>Данные сохранены с базе</h3>
@@ -122,14 +135,6 @@ export function CreateObject(){
                         <h3>Итоги проверки(осмотра) состояния открыто проложенных заземляющих проводников</h3>
                         <ItogOsmotraZaz handle={(x)=>{get_itog_osmotra_zaz(x)}}/>
                     </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Фото чертежей двигателей</legend>
-
-                    <p className='photo_ingines'>
-                        <input type="file" name="photos_of_blueprints" multiple id='photos'></input>
-                    </p>
                 </fieldset>
 
                 <p className='p_btn_send'>

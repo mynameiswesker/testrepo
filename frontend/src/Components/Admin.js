@@ -13,6 +13,10 @@ export function Admin(){
     history.push(`${old_path}/create`)
   }
 
+  const get_archive = function(){
+    history.push(`${old_path}/archive`)
+  }
+
   const [back,ch] = useState(false)
 
   if(!localStorage.location){
@@ -46,6 +50,10 @@ export function Admin(){
             
           <button onClick={btn_create_obj}>
             Добавить новый объект
+          </button>
+
+          <button onClick={get_archive}>
+            Архив объектов
           </button>
 
         </div>

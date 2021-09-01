@@ -59,9 +59,9 @@ export function SingleObject() {
                             <li onClick={()=>{change_category('vspomogatelnoe')}}>Вспомогательное электрооборудование</li>
                             <li onClick={()=>{change_category('kabelnie_linii')}}>Кабельные линии</li>
                             <li onClick={()=>{change_category('svedeniya_o_rem')}}>Сведения о проведенных ремонтах</li>
-                            <li>Сведения о проведенных аварийных ремонтах</li>
-                            <li>Проверка и осмотр состояния заземляющих проводников</li>
-                            <li>Итоги проверки состояния заземляющих проводников </li>
+                            <li onClick={()=>{change_category('avar_remont')}}>Сведения о проведенных аварийных ремонтах</li>
+                            <li onClick={()=>{change_category('prov_zazeml')}}>Проверка и осмотр состояния заземляющих проводников</li>
+                            <li onClick={()=>{change_category('itogi_osmotra_zaz')}}>Итоги проверки состояния заземляющих проводников </li>
                         </ul>
                     </li>
 

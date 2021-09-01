@@ -9,43 +9,6 @@ const config = require('config')
 const mongoose = require('mongoose')
 const Obj = require('../modules/obj')
 
-//init stream
-
-/* let gfs */
-
-/* const conn = mongoose.createConnection(config.get('mongoUri'),{
-  useNewUrlParser:true,
-  useUnifiedTopology:true
-}) */
-
-/* conn.once('open', ()=> {
-  gfs = Grid(conn.db, mongoose.mongo)
-  gfs.collection('uploads')
-}) */
-
-
-//Create storage engine
-/* const storage = new GridFsStorage({
-  url: config.get('mongoUri'),
-  file: (req, file) => {
-    return new Promise((resolve, reject) => {
-      crypto.randomBytes(16, (err, buf) => {
-        if (err) {
-          return reject(err);
-        }
-        const filename = buf.toString('hex') + path.extname(file.originalname);
-        const fileInfo = {
-          filename: filename,
-          bucketName: 'uploads'
-        };
-        resolve(fileInfo);
-      });
-    });
-  }
-}) */
-
-/* const upload = multer({ storage }) */
-
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, '/uploads')
@@ -86,18 +49,6 @@ router.post('/array', upload.array('photos'), async(req,res)=>{
   const standard_service_life = headerTehOsv.standard_service_life
   const inv_number = headerTehOsv.inv_number
 
-//Проверка на заполнение данными
-/*   if(!req.files || req.files.length === 0){
-    res.status(500).send({error:'Не выбрано ни одной картинки'})
-  }
-
-  if(!dataForm.inv_number){
-    res.status(500).send({error:'Не указан инвентарный номер'})
-  } */
-////////////////////////////////////
-
-  //const arr_imgs_filenames = imgs.map(img=> img.filename)//filenames всех картинок для этого объекта
-
 //Сохраняем новый объект
   const createdObj = new Obj({
     photos_engine_filenames:  /* arr_imgs_filenames */[],
@@ -134,28 +85,6 @@ router.get('/getobj', async(req,res)=>{
   const getObjs = await Obj.find({})
   res.json(getObjs)
 })
-
-//GET img for 1 obj
-/* router.post('/getimg', (req,res)=>{
-
-  const name_file_from_frontend = req.body.name//имя файла
-
-  const arr = []//фото для 1 объекта
-
-  //получаем все фото в files
-  gfs.files.findOne({filename: name_file_from_frontend}, (err,file) =>{
-
-    if(!file){
-      return res.status(404).json({
-        err:'no files exist'
-      })
-    }
-
-    const readstream = gfs.createReadStream(file.filename)
-    readstream.pipe(res)
-  })
-
-}) */
 
 //GET object
 //на фронет урл : /dist1 - получаем все объекты с данным номером дистанции для отображения списка доступных станций

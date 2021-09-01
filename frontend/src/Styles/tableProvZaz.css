@@ -1,7 +1,13 @@
-.table3>table{
+.table7>table{
     border-collapse: collapse;
     text-align: center;
     padding: 5px;
     margin: auto;
     font-size: 0.8rem;
+}
+
+.prov_zazeml_list{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
 }

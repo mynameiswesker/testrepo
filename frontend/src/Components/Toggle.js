@@ -3,6 +3,7 @@ import '../Styles/elPrivodTehSys.css'
 import '../Styles/tableOsnovElObor.css'
 import '../Styles/tableVspomogatelnoe.css'
 import '../Styles/tableKabel.css'
+import '../Styles/tableProvZaz.css'
 
 const Empty13 = ()=>{
     return(
@@ -511,6 +512,187 @@ if(category === 'svedeniya_o_rem'){
         </div>
     </div>
     
+    )
+}
+
+/////////////////Сведения о проведенных аварийных ремонтах//////////////////////////////////
+
+if(category === 'avar_remont'){
+    return(
+
+    <div className='osnovnoe_el_oborud'>{/* Не поменял класс */}
+        <h1>Сведения о проведенных аварийных ремонтах</h1>
+        <div className='table5'>
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td>Дата аварии</td>
+                        <td>Номер акта</td>
+                        <td>Краткое описание аварии, её обстоятельства, по чьей вине произошла, принятые меры</td>
+                        <td>Начальник дистанции</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+
+                    {obj.avar_remont.map((item,i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{new Date(item.date).getFullYear()}</td>
+                                <td>{item.number}</td>
+                                <td>{item.text}</td>
+                                <td>{item.person}</td>
+                            </tr>
+                        )
+                    })}
+
+                    {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                        return(
+                            <Empty4 key={i}/>
+                        )
+                    })}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    )
+}
+
+//////////////////////////////////////////////////////////////////
+
+/////////////////Проверка и осмотр состояния открыто проложенных проводников//////////////////////////////////
+
+if(category === 'prov_zazeml'){
+    if(obj.prov_zazeml.length === 0){
+        return(
+            <div className='prov_zazeml'>
+                <h1>Проверка и осмотр состояния открыто проложенных проводников</h1>
+                <div className='table7'>
+                    <table>
+                        <tbody>
+
+                            <tr>
+                                <td>№ п/п</td>
+                                <td>Наименование электроустановки и её элементов, подлежащих заземлению (занулению)</td>
+                                <td>Измеренное значение сопротивлений (Ом)</td>
+                                <td>Заключение</td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+
+                            {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                                return(
+                                    <Empty4 key={i}/>
+                                )
+                            })}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        )
+    }
+    return(
+
+    <div className='prov_zazeml'>{/* Не поменял класс */}
+        <h1>Проверка и осмотр состояния открыто проложенных проводников</h1>
+        <div className='prov_zazeml_list'>
+            <ul>
+                <li>1) Сечения заземляющих (зануляющих) проводников соответствуют принятым в проекте требованиям ПУЭ.</li>
+                <li>2) Надёжность сварки заземляющих проводников проверена простукиванием молотком.</li>
+                <li>3) Обрыв и видимые дефекты проводников отсутствуют</li>
+                <li>4) Измерение сопротивлений производились омметром типа: 
+                    <b>{obj.prov_zazeml[0].type}</b>, 
+                    дата проверки: 
+                    <b>
+                        {new Date(obj.prov_zazeml[0].date).getDay()}.
+                        {new Date(obj.prov_zazeml[0].date).getMonth()}.
+                        {new Date(obj.prov_zazeml[0].date).getFullYear()}
+                    </b>
+                </li>
+            </ul>
+        </div>
+        <div className='table7'>
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td>№ п/п</td>
+                        <td>Наименование электроустановки и её элементов, подлежащих заземлению (занулению)</td>
+                        <td>Измеренное значение сопротивлений (Ом)</td>
+                        <td>Заключение</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+
+                    {obj.prov_zazeml.map((item,i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{i+1}</td>
+                                <td>{item.name}</td>
+                                <td>{item.current}</td>
+                                <td>{item.text}</td>
+                            </tr>
+                        )
+                    })}
+
+                    {[1,2,3,4,5,6,7,8,9,10].map((item,i)=>{
+                        return(
+                            <Empty4 key={i}/>
+                        )
+                    })}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    )
+}
+
+//////////////////////////////////////////////////////////////////
+
+/////////////////Итоги осмотра заземления//////////////////////////////////
+
+if(category === 'itogi_osmotra_zaz'){
+    return(
+
+    <div className='prov_zazeml'>{/* Не поменял класс */}
+        <h1>Итоги осмотра заземления</h1>
+        <div className='itogi_zaz_wrapp'>
+            {obj.itog_osmotra_zaz.map((item,i)=>{
+                return(
+                    <div key={i}>
+                        <ul>
+                            <li>1. Прокладка заземляющих проводников выполнена в соответствии с проектом <b>{item.name_project}</b>, разработанным <b>{item.project_org}</b> по чертежам <b>{item.number_chert}</b></li>
+                            <li>2. Обрыв заземляющих проводников: <b>{item.is_obriv}</b></li>
+                            <li>3. Визуальный осмотр мест сварки показал: <b>{item.visual_osmotr_svarki}</b></li>
+                            <li>4. Визуальный осмотр болтовых соединений показал: <b>{item.visual_osmotr_boltSoed}</b></li>
+                            <li>5. Выявленные дефекты: <b>{item.is_defects}</b></li>
+                            <li>6. Заключение: <b>{item.itog}</b></li>
+                        </ul>
+                    </div>
+                )
+            })}
+        </div>
+    </div>
     )
 }
 
