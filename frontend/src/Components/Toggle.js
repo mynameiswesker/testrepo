@@ -63,69 +63,6 @@ const Empty6 = ()=>{
 
 export function Toggle({category,obj}) {
 
-/*     const [urls,change_urls] = useReducer((state,url)=>{//урлы картинок
-        //console.log(state)
-        return [...state,url]
-    },[]) */
-
-    //console.log(category,obj)
-
-/*     const getImgs = async()=>{
-
-        for(const file of data.photos_engine_filenames){
-
-            try {
-                const response = await fetch('/api/create/getimg',{
-                    method:'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                      },
-                    body:JSON.stringify({name:file})
-                })
-                const blob = await response.blob()
-                //console.log(blob)
-                //console.log(arr_filenames_photos)
-                const url = URL.createObjectURL(blob)
-                //console.log(url)
-                //console.log(urls)
-                change_urls(url)
-            } catch (err) {
-                console.log('Ошибка при получении картинок :', err)
-            }
-            
-        }
-
-    } */
-
-/*     if(type === 'photos_engines'){
-
-        return(
-            <div className='Toggle'>
-                <h2>Фото чертежей двигателей</h2>
-
-                <div>
-                    <div>
-                        <button onClick={getImgs}>Загрузить все фото</button>
-                    </div>
-                    <div className='photos_engines_div'>
-                        {urls.length === 0 ? 'Нет картинок' : 
-                            <ul>
-                                {urls.map((url,i)=>{
-                                    return(
-                                        <li key={i}>
-                                            <img alt='paigeimage' src={url}></img>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        }
-                    </div>
-                </div>
-
-            </div>
-        )
-    } */
-
     console.log(obj,category)
     
 //основная информация//////////////////////////////////////////////////////////////////

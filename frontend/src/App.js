@@ -12,6 +12,7 @@ import {Dist} from './Components/Dist'
 import {Stations} from './Components/Stations'
 import {SingleObject} from './Components/SingleObject'
 import {Archive} from './Components/Archive'
+import {StationInArchive} from './Components/StationInArchive'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/admin' component={Admin} />
         <Route exact path='/admin/create' component={CreateObject} />
         <Route exact path='/admin/archive' component={Archive} />
+        <Route exact path='/admin/archive/:station' component={StationInArchive}></Route>
       </Switch>
     </Router>
   );
