@@ -94,5 +94,74 @@ h2{
 
 /*конец таблицы приложений*/
 
+/*Админ изменение данных*/
+.h3_change{
+    display: flex;
+    justify-content: center;
+}
+.h3_change_padd_90{
+    display: flex;
+    padding-left: 90px;
+}
+.change_tehPasport{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.vlozh_div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    border:1px solid #242424;
+    margin:5px 90px 5px 90px;
+    flex-wrap: wrap;
+}
+.vlozh_div>div{
+    width:33.3%;
+    display: flex;
+    justify-content: space-between;
+}
+.target1{
+    background-color: #bebebe;
+    color: rgb(124, 121, 121);
+    margin-top:-5px;
+    min-height: 1000px;
+    padding-bottom: 10px;
+}
+.input_target1{
+    background-color: #ececec;
+    color: rgb(0, 0, 0);
+    border:1px solid #707070;
+}
+.target2{
+    background-color: rgb(165 185 225);
+    color:rgb(236 236 236);
+    border-bottom: 1px solid rgb(236 236 236);
+    position: fixed;
+    width: 100%;
+}
+.target2>h1{
+    padding-top:10px;
+}
+.target3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.target3>div{
+    min-width: 410px;
+}
+.target3>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+.target4{
+    padding-top:150px;
+    color:#000;
+}
+
+/*конец Админ изменение данных*/
+
 
 
